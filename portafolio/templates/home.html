@@ -1,16 +1,40 @@
-<h1>Holaaaaaa</h1>
+
+{% extends "layout.html" %} 
 
 
-{% for project in projects %}
+{% block content %}
 
-    <h2>{{project.title}}</h1>
-    <p>{{project.title}}<p>
-    <img src="{{project.image.url}}" alt="{{project.title}}"
+    {% load static %} 
+    <header class="row align-items-center">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+            <img src="{% static 'portafolio/jorge1606.jpg' %}" alt="" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%;">
+        </div>
+    
+        <div class="col-md-8">
+            <div class="text-container">
+                <h1>I am <strong>Jorge badran</strong></h1>
+                <h3>I am python developer</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, dolorum qui earum quae 
+                voluptatem quidem deserunt aut obcaecati magni culpa nesciunt similique magnam praesentium 
+                quos? Itaque magnam iure eius sed!</p>
+                <a href="#" class="btn btn-primary btn-lg rounded-0 my-3" >Download cv</a>
+            </div>
+        </div>
+    </header>
 
-    {% if project.url %}
-    <a href="{{project.url}}"/>{{project.url}}</a>
-    {% endif %}
 
+    <h1>Holaaaaaa</h1>
 
-{% endfor %}
+    {% for project in projects %}
 
+        <h2>{{project.title}}</h1>
+        <p>{{project.title}}<p>
+        <img src="{{project.image.url}}" width="500" height="500" alt="{{project.title}}">
+
+        {% if project.url %}
+        <a href="{{project.url}}"/>{{project.url}}</a>
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock  %} 

@@ -1,8 +1,11 @@
 from django.db import models
-from django.db.models import CharField
-from django.db.models import ImageField
-from django.db.models import URLField
+import datetime
+
 
 class Post(models.Model):
     
-    title=CharField
+    
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    image = models.ImageField(upload_to='blog/images')
+    date = models.DateField(datetime.date.today) # type: ignore
