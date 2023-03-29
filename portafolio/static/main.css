@@ -1,5 +1,10 @@
 body {
-    background: black;
+    background:#090126;
+}
+
+.card-project:hover {
+    border: 1px solid #fff;
+    cursor: pointer;
 }
 
 header {
